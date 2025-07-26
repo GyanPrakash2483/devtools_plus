@@ -2,7 +2,7 @@
 
 #include <endstone/plugin/plugin.h>
 
-class PluginTools : public endstone::Plugin {
+class DevtoolsPlus : public endstone::Plugin {
   public:
     void onLoad() override;
     void onEnable() override;

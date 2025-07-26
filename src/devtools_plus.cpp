@@ -1,18 +1,18 @@
-#include <plugin_tools.hpp>
+#include <devtools_plus.hpp>
 #include <endstone/color_format.h>
 #include <genplugin.hpp>
 #include <buildplugin.hpp>
 
-ENDSTONE_PLUGIN("plugin_tools", "0.2.0", PluginTools) {
+ENDSTONE_PLUGIN("devtools_plus", "0.2.0", DevtoolsPlus) {
   description = "Tools to help develop endstone plugins in C++";
   
   
   command("genplugin")
     .description("Generate a new C++ Plugin with given name (Use only lowercase letter and underscores for plugin name).")
     .usages("/genplugin <plugin_name: str>")
-    .permissions("plugin_tools.command.genplugin");
+    .permissions("devtools_plus.command.genplugin");
 
-  permission("plugin_tools.command.genplugin")
+  permission("devtools_plus.command.genplugin")
     .description("Allows users to use the /genplugin command.")
     .default_(endstone::PermissionDefault::Operator);
 
@@ -20,25 +20,25 @@ ENDSTONE_PLUGIN("plugin_tools", "0.2.0", PluginTools) {
   command("buildplugin")
     .description("Build a plugin from source.")
     .usages("/buildplugin <plugin_name: str>")
-    .permissions("plugin_tools.command.buildplugin");
+    .permissions("devtools_plus.command.buildplugin");
 
-  permission("plugin_tools.command.buildplugin")
+  permission("devtools_plus.command.buildplugin")
     .description("Allows users to use the /buildplugin command.")
     .default_(endstone::PermissionDefault::Operator);
 
 }
 
-void PluginTools::onLoad()
+void DevtoolsPlus::onLoad()
 {
-  getLogger().info(endstone::ColorFormat::Green + "PluginTools: " + endstone::ColorFormat::Reset + "Plugin Loaded Successfully");
+  getLogger().info(endstone::ColorFormat::Green + "DevtoolsPlus: " + endstone::ColorFormat::Reset + "Plugin Loaded Successfully");
 }
 
-void PluginTools::onEnable()
+void DevtoolsPlus::onEnable()
 {
   // On Plugin Enable
 }
 
-bool PluginTools::onCommand(endstone::CommandSender &sender, const endstone::Command &command, const std::vector<std::string> &args)
+bool DevtoolsPlus::onCommand(endstone::CommandSender &sender, const endstone::Command &command, const std::vector<std::string> &args)
 {
   if(command.getName() == "genplugin") {
     return genplugin(sender, command, args);

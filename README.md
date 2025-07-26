@@ -1,6 +1,6 @@
-# plugin_tools
+# devtools_plus
 
-plugin_tools is a plugin for the Endstone framework that simplifies Minecraft Bedrock plugin development in C++.
+devtools_plus is a plugin for the Endstone framework that simplifies Minecraft Bedrock plugin development in C++.
 
 # Features
 

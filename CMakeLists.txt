@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_COMPILER clang++)
 
-project(plugin_tools CXX)
+project(devtools_plus CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -18,7 +18,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(endstone)
 
 endstone_add_plugin(${PROJECT_NAME}
-    src/plugin_tools.cpp
+    src/devtools_plus.cpp
     src/util.cpp
     src/genplugin.cpp
     src/buildplugin.cpp
