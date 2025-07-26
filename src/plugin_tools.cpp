@@ -1,17 +1,31 @@
 #include <plugin_tools.hpp>
 #include <endstone/color_format.h>
 #include <genplugin.hpp>
+#include <buildplugin.hpp>
 
 ENDSTONE_PLUGIN("plugin_tools", "0.2.0", PluginTools) {
   description = "Tools to help develop endstone plugins in C++";
+  
+  
   command("genplugin")
     .description("Generate a new C++ Plugin with given name (Use only lowercase letter and underscores for plugin name).")
     .usages("/genplugin <plugin_name: str>")
     .permissions("plugin_tools.command.genplugin");
 
   permission("plugin_tools.command.genplugin")
-    .description("Allows user's to use the /genplugin command.")
+    .description("Allows users to use the /genplugin command.")
     .default_(endstone::PermissionDefault::Operator);
+
+  
+  command("buildplugin")
+    .description("Build a plugin from source.")
+    .usages("/buildplugin <plugin_name: str>")
+    .permissions("plugin_tools.command.buildplugin");
+
+  permission("plugin_tools.command.buildplugin")
+    .description("Allows users to use the /buildplugin command.")
+    .default_(endstone::PermissionDefault::Operator);
+
 }
 
 void PluginTools::onLoad()
@@ -28,7 +42,10 @@ bool PluginTools::onCommand(endstone::CommandSender &sender, const endstone::Com
 {
   if(command.getName() == "genplugin") {
     return genplugin(sender, command, args);
-    
+
+  } else if(command.getName() == "buildplugin") {
+    return buildplugin(sender, command, args);
+
   } else {
     return false;
   }
