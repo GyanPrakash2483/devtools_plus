@@ -17,5 +17,5 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(endstone)
 
-endstone_add_plugin(${PROJECT_NAME} src/plugin_tools.cpp)
+endstone_add_plugin(${PROJECT_NAME} src/plugin_tools.cpp src/genplugin.cpp)
 target_include_directories(${PROJECT_NAME} PRIVATE include)
