@@ -2,13 +2,13 @@
 #include <endstone/plugin/plugin.h>
 #include <util.hpp>
 #include <filesystem>
-#include <configs.hpp>
+#include <config.hpp>
 #include <thread>
 
 
 bool buildplugin(endstone::CommandSender &sender, const endstone::Command &command, const std::vector<std::string> &args) {
 
-  config_t config = getConfig();
+  // config_t config = getConfig();
 
   const std::string plugin_name = args[0];
 

@@ -1,11 +1,11 @@
 #include <genplugin.hpp>
-#include <configs.hpp>
+#include <config.hpp>
 #include <fstream>
 #include <util.hpp>
 
 bool genplugin(endstone::CommandSender &sender, const endstone::Command &command, const std::vector<std::string> &args) {
 
-  config_t config = getConfig();
+  // config_t config = getConfig();
 
   const std::string plugin_name = args[0];
 

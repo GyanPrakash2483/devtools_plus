@@ -19,8 +19,10 @@ FetchContent_MakeAvailable(endstone)
 
 endstone_add_plugin(${PROJECT_NAME}
     src/devtools_plus.cpp
+    src/config.cpp
     src/util.cpp
     src/genplugin.cpp
     src/buildplugin.cpp
+    src/dohotreloading.cpp
 )
 target_include_directories(${PROJECT_NAME} PRIVATE include)

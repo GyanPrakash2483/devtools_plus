@@ -6,13 +6,13 @@ devtools_plus is a plugin for the Endstone framework that simplifies Minecraft B
 
 ✅ Generate skeleton files for a new plugin.  
 ✅ Build plugins from source code.  
-📅 Automatically Build and Load plugins when code changes. (coming soon)  
+🏗️ Automatically Build and Load plugins when code changes. (coming soon)  
 
 # Commands
 
 ✅ `/genplugin <plugin_name: str>`: Generate a new C++ Plugin with given name (Use only lowercase letter and underscores for plugin name).  
 ✅ `/buildplugin <plugin_name: str>`: Build a plugin from it's source code.  
-📅 `/dohotreload <do_hot_reload: bool>`: Wether development plugins should be reloaded when code changes. (coming soon)  
+🏗️ `/dohotreload <do_hot_reload: bool>`: Wether development plugins should be reloaded when code changes. (coming soon)  
 
 # Building your plugins
 
